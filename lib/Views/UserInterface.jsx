@@ -30,11 +30,44 @@ import "./global.scss";
 // }
 
 export default function UserInterface(props) {
+  const aboutEnabled = props.terria.configParameters.aboutEnabled;
+  const relatedMapsEnabled = props.terria.configParameters.relatedMapsEnabled;
+
+  window.getCoordinates = function() {
+    return props.terria.mainViewer.currentViewer.mouseCoords;
+    return [
+      props.terria.mainViewer.homeCamera.coords.latitude,
+      props.terria.mainViewer.homeCamera.coords.longitude
+    ];
+  };
+
+  props.terria.locationService = function(zoomToLocation) {
+    window.zoomToMyLocation = function(location) {
+      location = JSON.parse(location);
+      if (location.coords != undefined) {
+        zoomToLocation(location);
+      }
+    };
+    $.ajax({
+      url: "./getLocation",
+      method: "POST",
+      success: function(result) {
+        if (result.coords != undefined) {
+          zoomToLocation(result);
+        }
+      }
+    });
+  };
+
   return (
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
-        <MenuItem caption="About" href="about.html" key="about-link" />
-        <RelatedMaps viewState={props.viewState} />
+        <If condition={relatedMapsEnabled}>
+          <RelatedMaps viewState={props.viewState} />
+        </If>
+        <If condition={aboutEnabled}>
+          <MenuItem caption="About" href="about.html" key="about-link" />
+        </If>
       </MenuLeft>
       <Nav>
         <MeasureTool terria={props.viewState.terria} key="measure-tool" />

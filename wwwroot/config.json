@@ -14,13 +14,13 @@
       "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
       "url": ""
     },
-    /*
+
         // Text that will be added to any pages printed from your site.
-        printDisclaimer:{
-            text:"Put your print disclaimer here.",
-            url: "#"
-        },
-        */
+    printDisclaimer:{
+        text:"Put your print disclaimer here.",
+        url: "#"
+    },
+
 
     // Pop-up disclaimer that will be shown at the start
     // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
@@ -35,26 +35,34 @@
     //     enableOnLocalhost: true // If false, don't show this when running on localhost
     // },
 
-    /*
-        developerAttribution: {
-            text: "Your organisation",
-            link: "http://www.example.com"
-        },*/
+    "developerAttribution": {
+      "text": "Tech Maven Geospatial, LLC",
+      "link": "http://www.techmaven.net"
+    },
     // This is used in various text messages. You should also set <title> in index.html
-    "appName": "Terria Map",
+    "appName": "MapData.World &  MapDataVisualization.xyz by Tech Maven Geospatial, LLC",
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"#\"><img src=\"images/logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     // Shown when things go wrong.
-    "supportEmail": "help@example.com",
+    "supportEmail": "support+mapsdataworld@techmaven.net",
     // You probably shouldn't change this.
     "proj4ServiceBaseUrl": "proj4def/",
     // Or this
-    "feedbackUrl": "feedback",
+    "feedbackUrl": "",
+
+    "storyEnabled": false,
+    "shareEnabled": false,
+    "relatedMapsEnabled": false,
+    "aboutEnabled": false,
+    "useJSNavigator": false,
+    "hideTerriaLogo": true,
+    "useCesiumIonTerrain":false,
+    "useCesiumIonBingImagery": false,
 
     // Default mobile viewer mode when loading the map for the first time on mobile platforms.
     // Options are: "3DTerrain", "3DSmooth", "2D"

@@ -21,6 +21,7 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
+// import NominatimSearchProviderViewModel from 'terriajs/lib/ViewModels/NominatimSearchProviderViewModel.js';
 import render from './lib/Views/render';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
@@ -82,6 +83,9 @@ module.exports = terria.start({
                 terria: terria,
                 key: terria.configParameters.bingMapsKey
             }),
+            // new NominatimSearchProviderViewModel({
+            //   terria: terria
+            // }),
             // new GazetteerSearchProviderViewModel({terria}),
             // new GnafSearchProviderViewModel({terria})
         ];
