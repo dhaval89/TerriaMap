@@ -21,10 +21,10 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
-// import NominatimSearchProviderViewModel from 'terriajs/lib/ViewModels/NominatimSearchProviderViewModel.js';
 import render from './lib/Views/render';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
+//import NominatimSearchProviderViewModel from 'terriajs/lib/ViewModels/NominatimSearchProviderViewModel';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -83,9 +83,9 @@ module.exports = terria.start({
                 terria: terria,
                 key: terria.configParameters.bingMapsKey
             }),
-            // new NominatimSearchProviderViewModel({
-            //   terria: terria
-            // }),
+            /*new NominatimSearchProviderViewModel({
+              terria : terria
+            }),*/
             // new GazetteerSearchProviderViewModel({terria}),
             // new GnafSearchProviderViewModel({terria})
         ];
