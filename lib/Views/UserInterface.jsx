@@ -33,15 +33,10 @@ export default function UserInterface(props) {
   const aboutEnabled = props.terria.configParameters.aboutEnabled;
   const relatedMapsEnabled = props.terria.configParameters.relatedMapsEnabled;
 
-  window.getCoordinates = function() {
-    return props.terria.mainViewer.currentViewer.mouseCoords;
-    return [
-      props.terria.mainViewer.homeCamera.coords.latitude,
-      props.terria.mainViewer.homeCamera.coords.longitude
-    ];
-  };
-
   props.terria.locationService = function(zoomToLocation) {
+    /*
+    My location code
+     */
     window.zoomToMyLocation = function(location) {
       location = JSON.parse(location);
       if (location.coords != undefined) {
@@ -57,6 +52,21 @@ export default function UserInterface(props) {
         }
       }
     });
+  };
+
+  /*
+    Go to coordinate code
+     */
+  props.terria.gotoCoordinate = function(gotoCoordinate) {
+    window.gotoCoordinate = function(latitude, longitude) {
+      gotoCoordinate(latitude, longitude);
+    };
+  };
+
+  props.terria.getCenterLatLong = function(getCenterLatLong) {
+    window.getCenterLatLong = function() {
+      return getCenterLatLong();
+    };
   };
 
   return (
