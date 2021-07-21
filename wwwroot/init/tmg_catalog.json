@@ -1,0 +1,346 @@
+{
+  "workbench": [],
+  "catalog": [
+    {
+      "id": "vakVIP",
+      "type": "group",
+      "name": "TechMavenGeospatial",
+      "members": [
+        {
+          "type": "esri-mapServer",
+          "name": "USGSImageryOnly",
+          "url": "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer",
+          "rectangle": {},
+          "dataCustodian": "USGS",
+          "id": "pKChdt",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/USGSImageryOnly"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "USGSShadedReliefOnly",
+          "url": "https://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "dataCustodian": "USGS",
+          "id": "HeUg36",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/USGSShadedReliefOnly"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "structures",
+          "url": "https://cartowfs.nationalmap.gov/arcgis/rest/services/structures/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "dataCustodian": "USGS",
+          "id": "VDKECl",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/structures"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "geonames",
+          "url": "https://cartowfs.nationalmap.gov/arcgis/rest/services/geonames/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "id": "XmRxx6",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/geonames"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "govunits",
+          "url": "https://cartowfs.nationalmap.gov/arcgis/rest/services/govunits/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "id": "N2iaKE",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/govunits"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "transportation",
+          "url": "https://idpgis.ncep.noaa.gov/arcgis/rest/services/radar/radar_base_reflectivity_time/ImageServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "id": "7Iydf5",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/transportation"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "sat_meteo_imagery_time",
+          "url": "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/sat_meteo_imagery_time/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "id": "x47s85",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/sat_meteo_imagery_time"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "NWS_Forecasts_Guidance_Warnings",
+          "url": "https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Forecasts_Guidance_Warnings/watch_warn_adv/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "id": "qXibXd",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/NWS_Forecasts_Guidance_Warnings"
+          ]
+        },
+        {
+          "type": "esri-mapServer",
+          "name": "CO_OPS_Stations",
+          "url": "https://idpgis.ncep.noaa.gov/arcgis/rest/services/NOS_Observations/CO_OPS_Products/MapServer",
+          "rectangle": {
+            "west": 106,
+            "south": -52,
+            "east": 172,
+            "north": -8
+          },
+          "id": "VxLLKw",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/CO_OPS_Stations"
+          ]
+        },
+        {
+          "type": "ckan-group",
+          "name": "Data.gov",
+          "url": "http://www.data.gov/developers/apis",
+          "groupBy": "organization",
+          "supportedResourceFormats": [],
+          "id": "aXLMVi",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/Data.gov"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "Countors",
+          "url": "http://maptileserver.xyz:8000/services/countourlines_vectortiles/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "countourlines_vectortiles",
+          "id": "8jxn15",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/Countors"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "canada_GADM2",
+          "url": "http://maptileserver.xyz:8000/services/canada_boundaries_gadm2/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "canada_GADM2",
+          "id": "ChWSzI",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/canada_GADM2"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "gars30mingridcentroids_0-5",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/gars_15min/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "gars30mingridcentroids_0-5",
+          "id": "YGXhmV",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/gars30mingridcentroids_0-5"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "GARS_GRID_30",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/gars_30min/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "GARS_GRID_30",
+          "id": "tg6Vfh",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/GARS_GRID_30"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "worldwide_gadm",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/worldwide_gadm/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "worldwide_gadm",
+          "id": "SnryKm",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/worldwide_gadm"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "Cities_GU_IncorporatedPlaces",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/usa_cities/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "Cities_GU_IncorporatedPlaces",
+          "id": "THSi7a",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/Cities_GU_IncorporatedPlaces"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "USA_GADM_2",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/usa_counties_gadm2/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "USA_GADM_2",
+          "id": "IseSQK",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/USA_GADM_2"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "polygon_zipcodes",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/zipcodes_usa/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "polygon_zipcodes",
+          "id": "ziLzh6",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/polygon_zipcodes"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "polygon_timezones",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/overlay_timezones/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "polygon_timezones",
+          "id": "i4vpKz",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/polygon_timezones"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "polygon_urban_areas",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/urbanreas/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "polygon_urban_areas",
+          "id": "4veUnq",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/polygon_urban_areas"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "MilitaryBases",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/military_bases_ranges/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "polygon_urban_areas",
+          "id": "AzSX13",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/MilitaryBases"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "point_military_base",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/military_bases_usa/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "point_military_base",
+          "id": "yBxzJa",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/point_military_base"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "placenames_cities_northamerica",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/placenames_cities_northamerica/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "placenames_cities_northamerica",
+          "id": "RrLuyr",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/placenames_cities_northamerica"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "mgrs_grid_vectortiles",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/mgrs_grid_vectortiles/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "mgrs_grid_vectortiles",
+          "id": "8qb5sf",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/mgrs_grid_vectortiles"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "overlay_state_borders",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/usa/overlay_state_borders/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "overlay_state_borders",
+          "id": "iiV2tM",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/overlay_state_borders"
+          ]
+        },
+        {
+          "type": "mvt",
+          "name": "nga_intl_boundaries_line",
+          "url": "http://maptileserver.xyz:8000/services/reference_layers/nga_intl_boundaries_line/tiles/{z}/{x}/{y}.pbf",
+          "lineColor": "hsl(100,58%,0.83)",
+          "layer": "nga_intl_boundaries_line",
+          "id": "sXq7VP",
+          "shareKeys": [
+            "Root Group/TechMavenGeospatial/nga_intl_boundaries_line"
+          ]
+        }
+      ],
+      "isOpen": true,
+      "shareKeys": [
+        "Root Group/TechMavenGeospatial"
+      ]
+    }
+  ],
+  "homeCamera": {
+    "lookAt": {
+      "targetLongitude": -100.727959,
+      "targetLatitude": 36.879621,
+      "targetHeight": 1500000,
+      "heading": 0,
+      "pitch": 90,
+      "range": 1500000
+    }
+  }
+}

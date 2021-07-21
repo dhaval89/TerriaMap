@@ -37,18 +37,26 @@ export default function UserInterface(props) {
     /*
     My location code
      */
-    window.zoomToMyLocation = function(location) {
-      location = JSON.parse(location);
-      if (location.coords != undefined) {
-        zoomToLocation(location);
+    window.zoomToMyLocation = function(latitude, longitude, error = undefined) {
+      if (latitude !== undefined && longitude !== undefined) {
+        zoomToLocation({
+          coords: {
+            latitude: latitude,
+            longitude: longitude
+          }
+        });
+      } else if (error !== undefined) {
+        //Show alert
       }
     };
     $.ajax({
       url: "./getLocation",
       method: "POST",
       success: function(result) {
-        if (result.coords != undefined) {
-          zoomToLocation(result);
+        if (result.isSuccess !== undefined && result.isSuccess === true) {
+          window.zoomToMyLocation(result.latitude, result.longitude);
+        } else if (result.message !== undefined) {
+          //Show alert
         }
       }
     });

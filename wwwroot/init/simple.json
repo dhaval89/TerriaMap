@@ -5,50 +5,44 @@
     "south": -45,
     "west": 109
   },
-  "catalog": [
-    {
-      "type": "wms-group",
-      "name": "Test",
-      "url": "https://programs.communications.gov.au/geoserver/ows",
-      "members": [
-        {
-          "type": "wms",
-          "localId": "mybroadband%3AMyBroadband_ADSL_Availability",
-          "legends": [
-            {
-              "items": [
-                {
-                  "title": "A - Best",
-                  "color": "#6B0038"
-                },
-                {
-                  "title": "B",
-                  "color": "#F41911"
-                },
-                {
-                  "title": "C",
-                  "color": "#F67F00"
-                },
-                {
-                  "title": "D",
-                  "color": "#D78B6D"
-                },
-                {
-                  "title": "E - Worst",
-                  "color": "#ECD2BE"
-                },
-                {
-                  "title": "No data",
-                  "color": "rgba(0,0,0,0)",
-                  "outlineColor": "black",
-                  "addSpacingAbove": true
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
+  "catalog": [{
+    "type": "wms-group",
+    "name": "Test",
+    "url": "https://programs.communications.gov.au/geoserver/ows",
+    "members": [{
+      "type": "wms",
+      "localId": "mybroadband%3AMyBroadband_ADSL_Availability",
+      "legends": [{
+        "items": [{
+          "title": "A - Best",
+          "color": "#6B0038"
+        },
+          {
+            "title": "B",
+            "color": "#F41911"
+          },
+          {
+            "title": "C",
+            "color": "#F67F00"
+          },
+          {
+            "title": "D",
+            "color": "#D78B6D"
+          },
+          {
+            "title": "E - Worst",
+            "color": "#ECD2BE"
+          },
+          {
+            "title": "No data",
+            "color": "rgba(0,0,0,0)",
+            "outlineColor": "black",
+            "addSpacingAbove": true
+          }
+        ]
+      }]
+    }]
+  },
     {
       "type": "geojson",
       "name": "GeoJSON Test",
@@ -91,13 +85,16 @@
       "type": "esri-mapServer",
       "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
       "name": "Surface Geology",
-      "rectangle": { "west": 106, "south": -52, "east": 172, "north": -8 },
-      "info": [
-        {
-          "name": "Licence",
-          "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-        }
-      ]
+      "rectangle": {
+        "west": 106,
+        "south": -52,
+        "east": 172,
+        "north": -8
+      },
+      "info": [{
+        "name": "Licence",
+        "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+      }]
     },
     {
       "name": "Brisbane 3D city model (aero3Dpro)",
@@ -188,7 +185,6 @@
         "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
         "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-titles='Time (UTC):Time,MW:Power Generation' column-units='Time (UTC):Date,MW:MW'></chart></td></tr>  </tbody></table>"
       },
-      // "polling": { "seconds": 300, "replace": true },
       "rectangle": {
         "west": 134.0,
         "south": -47.0,
@@ -201,9 +197,7 @@
         "replaceWithZeroValues": []
       },
       "defaultStyle": {
-        "time": {
-          // "timeColumn": null
-        },
+        "time": {},
         "color": {
           "nullColor": "rgba(255,255,255,0.1)",
           "nullLabel": "No value",
@@ -226,17 +220,14 @@
           "sizeFactor": 20
         }
       },
-      "styles": [
-        {
-          "id": "Aggregation",
-          "title": null
-        }
-      ],
-      "info": [
-        {
-          "name": "Description",
-          "content": "The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
-        },
+      "styles": [{
+        "id": "Aggregation",
+        "title": null
+      }],
+      "info": [{
+        "name": "Description",
+        "content": "The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+      },
         {
           "name": "Updates",
           "content": "The Actual Generation and Load data is updated in 5-minute intervals."
