@@ -77,6 +77,23 @@ export default function UserInterface(props) {
     };
   };
 
+  /**
+   *
+   * @param {Object} baseMap : viewState.terria.baseMaps[index]
+   * Change index to update map type, refer baseMaps array for more details
+   * @use : selectBaseMap(viewState.terria.baseMaps[0])
+   */
+  window.selectBaseMap = function(baseMap) {
+    props.terria.mainViewer.setBaseMap(baseMap.mappable);
+
+    if (baseMap.mappable) {
+      const baseMapId = baseMap.mappable.uniqueId;
+      if (baseMapId) {
+        props.terria.setLocalProperty("basemap", baseMapId);
+      }
+    }
+  };
+
   return (
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
