@@ -83,7 +83,37 @@ export default function UserInterface(props) {
    * Change index to update map type, refer baseMaps array for more details
    * @use : selectBaseMap(viewState.terria.baseMaps[0])
    */
-  window.selectBaseMap = function(baseMap) {
+  const mapTypes = {
+    "Bing Maps Aerial with Labels": "basemap-bing-aerial-with-labels",
+    "Bing Maps Aerial": "basemap-bing-aerial",
+    "Bing Maps Roads": "basemap-bing-roads",
+    "Natural Earth 2": "basemap-natural-earth-II",
+    "NASA Black Marble": "basemap-black-marble",
+    "Postitron(Light)": "basemap-positron",
+    "Dark Matter": "basemap-darkmatter",
+    "Here Terrain": "basemap-here-terrain",
+    "Here Satellite": "basemap-here-satellite",
+    "Thunderforest Outdoors": "basemap-thunderforest-outdoors",
+    "Thunderforest Transport Dark": "basemap-thunderforest-transport-dark",
+    "ESRI World Imagenary Basemap": "basemap-esri-world-imagery-basemap",
+    "ESRI Shaded Relief Basemap": "basemap-esri-shaded-relief",
+    "ESRI World Street Map Basemap": "basemap-esri-world-street-map",
+    "ESRI NatGeo World Map Basemap": "basemap-esri-natGeo-world-map"
+  };
+  /**
+   *
+   * @param {} mapJson
+   */
+  function getBaseMap(maptype) {
+    const basemaps = props.viewState.terria.baseMaps;
+    for (let i = 0; i < basemaps.length; i++) {
+      if (basemaps[i].mappable.uniqueId == mapTypes[maptype]) {
+        return basemaps[i];
+      }
+    }
+  }
+  window.selectBaseMap = function(mapJson) {
+    const baseMap = getBaseMap(mapJson.maptype);
     props.terria.mainViewer.setBaseMap(baseMap.mappable);
 
     if (baseMap.mappable) {
