@@ -33,6 +33,96 @@ export default function UserInterface(props) {
   const aboutEnabled = props.terria.configParameters.aboutEnabled;
   const relatedMapsEnabled = props.terria.configParameters.relatedMapsEnabled;
 
+  function sendEventToDevice(event) {
+    var ifrm = document.createElement("IFRAME");
+    ifrm.setAttribute("src", "js-frame:" + event);
+    document.documentElement.appendChild(ifrm);
+    ifrm.parentNode.removeChild(ifrm);
+    ifrm = null;
+  }
+
+  const eventArray = {
+    onClick: function(next) {
+      if (
+        props.terria.mainViewer._lastViewer &&
+        props.terria.mainViewer._lastViewer.scene &&
+        props.terria.mainViewer._lastViewer.scene.map &&
+        props.terria.mainViewer._lastViewer.scene.map._events &&
+        props.terria.mainViewer._lastViewer.scene.map._events.click
+      ) {
+        var newPickLocation =
+          props.terria.mainViewer._lastViewer.scene.map._events.click[0].fn;
+        props.terria.mainViewer._lastViewer.scene.map._events.click[0].fn = function(
+          e
+        ) {
+          console.log("new Pratik");
+          newPickLocation(e);
+          sendEventToDevice("onClick");
+        };
+      } else if (next) {
+        next();
+      }
+    },
+    move: function(next) {
+      if (
+        props.terria.mainViewer._lastViewer &&
+        props.terria.mainViewer._lastViewer.scene &&
+        props.terria.mainViewer._lastViewer.scene.map &&
+        props.terria.mainViewer._lastViewer.scene.map._events &&
+        props.terria.mainViewer._lastViewer.scene.map._events.move
+      ) {
+        var newPickLocation =
+          props.terria.mainViewer._lastViewer.scene.map._events.move[0].fn;
+        props.terria.mainViewer._lastViewer.scene.map._events.move[0].fn = function(
+          e
+        ) {
+          console.log("move Pratik");
+          newPickLocation(e);
+          sendEventToDevice("move");
+        };
+      } else if (next) {
+        next();
+      }
+    },
+    zoomend: function(next) {
+      if (
+        props.terria.mainViewer._lastViewer &&
+        props.terria.mainViewer._lastViewer.scene &&
+        props.terria.mainViewer._lastViewer.scene.map &&
+        props.terria.mainViewer._lastViewer.scene.map._events &&
+        props.terria.mainViewer._lastViewer.scene.map._events.zoomend
+      ) {
+        var newPickLocation =
+          props.terria.mainViewer._lastViewer.scene.map._events.zoomend[0].fn;
+        props.terria.mainViewer._lastViewer.scene.map._events.zoomend[0].fn = function(
+          e
+        ) {
+          console.log("zoomend Pratik");
+          newPickLocation(e);
+          sendEventToDevice("zoomend");
+        };
+      } else if (next) {
+        next();
+      }
+    }
+  };
+
+  function triggerAllEvents() {
+    for (const key in eventArray) {
+      if (Object.hasOwnProperty.call(eventArray, key)) {
+        const element = eventArray[key];
+        const newFunc = function(next) {
+          setTimeout(function() {
+            element(next);
+          }, 1000);
+        };
+        newFunc(newFunc);
+      }
+    }
+  }
+
+  triggerAllEvents();
+
   props.terria.locationService = function(zoomToLocation) {
     /*
     My location code
