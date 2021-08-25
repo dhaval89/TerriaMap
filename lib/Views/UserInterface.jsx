@@ -226,6 +226,25 @@ export default function UserInterface(props) {
     });
   };
 
+  window.selectViewer = function(viewer) {
+    runInAction(() => {
+      const mainViewer = props.terria.mainViewer;
+      if (viewer === "3d" || viewer === "3dsmooth") {
+        mainViewer.viewerMode = "cesium";
+        mainViewer.viewerOptions.useTerrain = viewer === "3d";
+      } else if (viewer === "2d") {
+        mainViewer.viewerMode = "leaflet";
+      } else {
+        console.error(
+          `Trying to select ViewerMode ${viewer} that doesn't exist`
+        );
+      }
+      // We store the user's chosen viewer mode for future use.
+      props.terria.setLocalProperty("viewermode", viewer);
+      props.terria.currentViewer.notifyRepaintRequired();
+    });
+  };
+
   return (
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
