@@ -60,7 +60,7 @@ export default function UserInterface(props) {
           sendEventToDevice("onClick");
         };
       } else if (next) {
-        next();
+        next(next);
       }
     },
     move: function(next) {
@@ -81,7 +81,7 @@ export default function UserInterface(props) {
           sendEventToDevice("move");
         };
       } else if (next) {
-        next();
+        next(next);
       }
     },
     zoomend: function(next) {
@@ -102,7 +102,7 @@ export default function UserInterface(props) {
           sendEventToDevice("zoomend");
         };
       } else if (next) {
-        next();
+        next(next);
       }
     }
   };
