@@ -3,6 +3,8 @@ import {
   Nav,
   ExperimentalMenu
 } from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
+import { runInAction } from "mobx";
+import DefaultTimelineModel from "terriajs/lib/Models/DefaultTimelineModel";
 import MeasureTool from "terriajs/lib/ReactViews/Map/Navigation/MeasureTool";
 import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
 import PropTypes from "prop-types";
@@ -212,6 +214,16 @@ export default function UserInterface(props) {
         props.terria.setLocalProperty("basemap", baseMapId);
       }
     }
+  };
+
+  window.changeTimeline = function(flag) {
+    runInAction(() => {
+      if (flag) {
+        props.terria.timelineStack.defaultTimeVarying = new DefaultTimelineModel();
+      } else {
+        props.terria.timelineStack.defaultTimeVarying = undefined;
+      }
+    });
   };
 
   return (
