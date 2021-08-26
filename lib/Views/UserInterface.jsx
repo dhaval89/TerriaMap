@@ -225,7 +225,11 @@ export default function UserInterface(props) {
       }
     });
   };
-
+  window.mapQuality = function(val) {
+    runInAction(() => {
+      props.terria.baseMaximumScreenSpaceError = val || 0;
+    });
+  };
   window.selectViewer = function(viewer) {
     runInAction(() => {
       const mainViewer = props.terria.mainViewer;
