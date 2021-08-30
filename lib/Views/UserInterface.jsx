@@ -59,6 +59,11 @@ export default function UserInterface(props) {
         ) {
           console.log("new Pratik");
           newPickLocation(e);
+          window.currentLatLong = {
+            latitude: props.terria.leaflet.mouseCoords.latitude,
+            longitude: props.terria.leaflet.mouseCoords.longitude
+          };
+          console.log(window.currentLatLong);
           sendEventToDevice("onClick");
         };
       } else if (next) {
@@ -80,6 +85,11 @@ export default function UserInterface(props) {
         ) {
           console.log("move Pratik");
           newPickLocation(e);
+          window.currentLatLong = {
+            latitude: props.terria.leaflet.mouseCoords.latitude,
+            longitude: props.terria.leaflet.mouseCoords.longitude
+          };
+          console.log(window.currentLatLong);
           sendEventToDevice("move");
         };
       } else if (next) {
@@ -101,6 +111,11 @@ export default function UserInterface(props) {
         ) {
           console.log("zoomend Pratik");
           newPickLocation(e);
+          window.currentLatLong = {
+            latitude: props.terria.leaflet.mouseCoords.latitude,
+            longitude: props.terria.leaflet.mouseCoords.longitude
+          };
+          console.log(window.currentLatLong);
           sendEventToDevice("zoomend");
         };
       } else if (next) {
